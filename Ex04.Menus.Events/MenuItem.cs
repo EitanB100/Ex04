@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ex04.Menus.Events
 {
@@ -38,12 +34,22 @@ namespace Ex04.Menus.Events
             }
         }
 
-        public void GotClicked()
+        public void AddSubItem(MenuItem i_MenuItem)
         {
-            OnCliked();
+            SubItems.Add(i_MenuItem);
         }
 
-        private void OnCliked()
+        public void RemoveSubItem(MenuItem i_MenuItem)
+        {
+            SubItems.Add(i_MenuItem);
+        }
+
+        public void GotClicked()
+        {
+            OnClicked();
+        }
+
+        private void OnClicked()
         {
             if (Clicked != null)
             {
