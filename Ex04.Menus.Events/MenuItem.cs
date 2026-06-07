@@ -11,7 +11,12 @@ namespace Ex04.Menus.Events
     {
         private string m_title;
         private List<MenuItem> m_subItems = new List<MenuItem>();
+        public event Action<MenuItem> Clicked;
 
+        public MenuItem(string i_Title)
+        {
+            m_title = i_Title;
+        }
 
         public String Title
         {
@@ -30,6 +35,19 @@ namespace Ex04.Menus.Events
             get
             {
                 return m_subItems;
+            }
+        }
+
+        public void GotClicked()
+        {
+            OnCliked();
+        }
+
+        private void OnCliked()
+        {
+            if (Clicked != null)
+            {
+                Clicked.Invoke(this);
             }
         }
     }
