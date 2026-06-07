@@ -5,24 +5,24 @@ namespace Ex04.Menus.Events
 {
     public class MenuItem
     {
-        private string m_title;
+        private string m_text;
         private List<MenuItem> m_subItems = new List<MenuItem>();
         public event Action<MenuItem> Clicked;
 
-        public MenuItem(string i_Title)
+        public MenuItem(string i_text)
         {
-            m_title = i_Title;
+            m_text = i_text;
         }
 
-        public String Title
+        public String Text
         {
             get
             {
-                return m_title;
+                return m_text;
             }
             set
             {
-                m_title = value;
+                m_text = value;
             }
         }
 
@@ -41,7 +41,7 @@ namespace Ex04.Menus.Events
 
         public void RemoveSubItem(MenuItem i_MenuItem)
         {
-            SubItems.Add(i_MenuItem);
+            SubItems.Remove(i_MenuItem);
         }
 
         public void GotClicked()
