@@ -37,5 +37,10 @@ namespace Ex04.Menus.Interfaces
                 return m_SubMenu;
             }
         }
+
+        public void AddSubMenuItem(MenuItem item)
+        {
+            m_SubMenu.Add(item);
+        }
     }
 }

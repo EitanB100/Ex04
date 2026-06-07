@@ -5,13 +5,17 @@ namespace Ex04.Menus.Interfaces
 {
     public class MainMenu
     {
-        string m_Name;
-        List<MenuItem> m_MenuItems;
+        private string m_Name;
+        private List<MenuItem> m_MenuItems = new List<MenuItem>();
 
-        public MainMenu(string i_Name, List<MenuItem> i_MenuItems)
+        public MainMenu(string i_Name)
         {
             m_Name = i_Name;
-            m_MenuItems = i_MenuItems;
+        }
+
+        public void AddMenuItem(MenuItem i_ItemToAdd)
+        {
+            m_MenuItems.Add(i_ItemToAdd);
         }
 
         public void Show()
