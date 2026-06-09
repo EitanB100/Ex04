@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Ex04.Menus.Interfaces;
 
 namespace Ex04.Menus.Test
 {
-    internal class ShowCurrentDate
+    public class ShowCurrentDate : IMenuOptionsHandler
     {
+        public void InvokeMenuOptionSelected()
+        {
+            TestLogic.ShowCurrentDate();
+        }
     }
 }

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Ex04.Menus.Events
+﻿namespace Ex04.Menus.Events
 {
     public class MenuItem
     {
