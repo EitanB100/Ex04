@@ -1,10 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Management.Instrumentation;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace Ex04.Menus.Events
 {
@@ -12,6 +7,8 @@ namespace Ex04.Menus.Events
     {
         private List<MenuItem> m_firstSubItems = new List<MenuItem>();
         private string m_title;
+        private const int k_ExitChoice = 0;
+        private const int k_bufferSizeForSeparator = 6;
 
         public String Title
         {
@@ -45,13 +42,16 @@ namespace Ex04.Menus.Events
         private void ShowSingleMenu(string i_CurrentTitle, List<MenuItem> i_CurrentItems, bool i_IsMainMenu)
         {
             bool askedToQuit = false;
+
             while (!askedToQuit)
             {
-                Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("** {0} **" , i_CurrentTitle);
                 Console.ResetColor();
-                Console.WriteLine("------------------------");
+
+                string separator = new string('-', i_CurrentTitle.Length + k_bufferSizeForSeparator);
+
+                Console.WriteLine(separator);
 
                 int itemNumber = 1;
                 foreach (MenuItem item in i_CurrentItems)
@@ -63,29 +63,33 @@ namespace Ex04.Menus.Events
                 string exitOrBack = i_IsMainMenu ? "Exit" : "Back";
                 Console.WriteLine("0. {0}", exitOrBack);
 
-                Console.WriteLine("Please enter your choice (1-{0} or 0 to {1})", i_CurrentItems.Count, exitOrBack.ToLower());
-
+                Console.WriteLine("Please enter your choice (1-{0} or 0 to {1}):", i_CurrentItems.Count, i_IsMainMenu ? "exit" : "go back");
+                Console.Write(">> ");
+                    
                 string userInput = Console.ReadLine();
-                int UserChoice;
+                int userChoice;
 
-                while (!int.TryParse(userInput, out UserChoice) || UserChoice < 0 || UserChoice > i_CurrentItems.Count)
+                while (!int.TryParse(userInput, out userChoice) || userChoice < 0 || userChoice > i_CurrentItems.Count)
                 {
                     Console.WriteLine("Invalid input. Please enter a valid choice (1-{0} or 0 to exit):", i_CurrentItems.Count);
+                    Console.Write(">> ");
                     userInput = Console.ReadLine();
                 }
-                if (UserChoice == 0)
+                if (userChoice == 0)
                 {
                     askedToQuit = true;
                 }
                 else
                 {
-                    MenuItem selectedItem = i_CurrentItems[UserChoice - 1];
+                    MenuItem selectedItem = i_CurrentItems[userChoice - 1];
                     if (selectedItem.SubItems.Count == 0)
                     {
+                        Console.Clear();
                         selectedItem.GotClicked();
                     }
                     else
                     {
+                        Console.Clear();
                         ShowSingleMenu(selectedItem.Text, selectedItem.SubItems, false);
                     }
                 }
