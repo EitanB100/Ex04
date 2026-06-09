@@ -5,33 +5,38 @@ namespace Ex04.Menus.Events
 {
     public class MainMenu
     {
-        private List<MenuItem> m_firstSubItems = new List<MenuItem>();
-        private string m_title;
+        private List<MenuItem> m_FirstSubItems = new List<MenuItem>();
+        private string m_Title;
         private const int k_ExitChoice = 0;
-        private const int k_bufferSizeForSeparator = 6;
+        private const int k_BufferSizeForSeparator = 6;
+
+        public MainMenu(string i_Title)
+        {
+            m_Title = i_Title;
+        }
 
         public String Title
         {
             get
             {
-                return m_title;
+                return m_Title;
             }
             set
             {
-                m_title = value;
+                m_Title = value;
             }
         }
         public List<MenuItem> SubItems
         {
             get
             {
-                return m_firstSubItems;
+                return m_FirstSubItems;
             }
         }
 
         public void AddMenuItem(MenuItem i_MenuItem)
         {
-            m_firstSubItems.Add(i_MenuItem);
+            m_FirstSubItems.Add(i_MenuItem);
         }
 
         public void Show()
@@ -49,7 +54,7 @@ namespace Ex04.Menus.Events
                 Console.WriteLine("** {0} **" , i_CurrentTitle);
                 Console.ResetColor();
 
-                string separator = new string('-', i_CurrentTitle.Length + k_bufferSizeForSeparator);
+                string separator = new string('-', i_CurrentTitle.Length + k_BufferSizeForSeparator);
 
                 Console.WriteLine(separator);
 
