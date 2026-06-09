@@ -1,9 +1,4 @@
-﻿using Ex04.Menus.Interfaces;
-using Ex04.Menus.Events;
-using System;
-using System.Collections.Generic;
-
-namespace Ex04.Menus.Test
+﻿namespace Ex04.Menus.Test
 {
     class Program
     {
@@ -46,7 +41,7 @@ namespace Ex04.Menus.Test
 
         private static void runInterfacesMenu()
         {
-            Ex04.Menus.Interfaces.MainMenu interfacesMenu = new Ex04.Menus.Interfaces.MainMenu("Delegates Main Menu");
+            Ex04.Menus.Interfaces.MainMenu interfacesMenu = new Ex04.Menus.Interfaces.MainMenu("Interfaces Main Menu");
 
             Ex04.Menus.Interfaces.MenuItem showCurrentDate = new Ex04.Menus.Interfaces.MenuItem("Show Current Date", new ShowCurrentDate());
             Ex04.Menus.Interfaces.MenuItem showCurrentTime = new Ex04.Menus.Interfaces.MenuItem("Show Current Time", new ShowCurrentTime());

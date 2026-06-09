@@ -66,7 +66,7 @@ namespace Ex04.Menus.Events
                 }
 
                 string exitOrBack = i_IsMainMenu ? "Exit" : "Back";
-                Console.WriteLine("0. {0}", exitOrBack);
+                Console.WriteLine("{0}. {1}", k_ExitChoice, exitOrBack);
 
                 Console.WriteLine("Please enter your choice (1-{0} or 0 to {1}):", i_CurrentItems.Count, i_IsMainMenu ? "exit" : "go back");
                 Console.Write(">> ");
@@ -76,7 +76,7 @@ namespace Ex04.Menus.Events
 
                 while (!int.TryParse(userInput, out userChoice) || userChoice < 0 || userChoice > i_CurrentItems.Count)
                 {
-                    Console.WriteLine("Invalid input. Please enter a valid choice (1-{0} or 0 to exit):", i_CurrentItems.Count);
+                    Console.WriteLine("Invalid input. Please enter a valid choice (1-{0} or {1} to {2}):", i_CurrentItems.Count, k_ExitChoice, i_IsMainMenu ? "exit" : "go back");
                     Console.Write(">> ");
                     userInput = Console.ReadLine();
                 }

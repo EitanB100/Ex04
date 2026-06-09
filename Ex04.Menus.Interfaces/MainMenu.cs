@@ -57,8 +57,8 @@ namespace Ex04.Menus.Interfaces
 
                 while (!(int.TryParse(userInput, out convertedChoice)) || convertedChoice < 0 || convertedChoice > i_CurrentMenuItems.Count)
                 {
-                    Console.WriteLine("Invalid input. Please enter your choice (1-{0} or 0 to {1}):", i_CurrentMenuItems.Count, i_IsMainMenu ? "exit" : "go back");
-                    Console.Write(">>");
+                    Console.WriteLine("Invalid input. Please enter your choice (1-{0} or {1} to {2}):", i_CurrentMenuItems.Count, k_ExitChoice, i_IsMainMenu ? "exit" : "go back");
+                    Console.Write(">> ");
 
                     userInput = Console.ReadLine();
                 }
@@ -66,6 +66,7 @@ namespace Ex04.Menus.Interfaces
                 if (convertedChoice == k_ExitChoice)
                 {
                     askedToQuit = true;
+                    Console.Clear();
                 }   
                 else
                 {
