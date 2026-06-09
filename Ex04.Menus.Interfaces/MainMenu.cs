@@ -8,7 +8,7 @@ namespace Ex04.Menus.Interfaces
         private string m_Name;
         private List<MenuItem> m_MenuItems = new List<MenuItem>();
         private const int k_ExitChoice = 0;
-        private const int k_bufferSizeForSeparator = 6;
+        private const int k_BufferSizeForSeparator = 6;
 
         public MainMenu(string i_Name)
         {
@@ -37,7 +37,7 @@ namespace Ex04.Menus.Interfaces
 
                 Console.ResetColor();
 
-                string separator = new string('-', i_CurrentMenuTitle.Length + k_bufferSizeForSeparator);
+                string separator = new string('-', i_CurrentMenuTitle.Length + k_BufferSizeForSeparator);
 
                 Console.WriteLine(separator);
 
