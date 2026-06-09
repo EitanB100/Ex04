@@ -68,7 +68,7 @@ namespace Ex04.Menus.Events
                 string exitOrBack = i_IsMainMenu ? "Exit" : "Back";
                 Console.WriteLine("{0}. {1}", k_ExitChoice, exitOrBack);
 
-                Console.WriteLine("Please enter your choice (1-{0} or 0 to {1}):", i_CurrentItems.Count, i_IsMainMenu ? "exit" : "go back");
+                Console.WriteLine("Please enter your choice (1-{0} or {1} to {1}):", i_CurrentItems.Count, k_ExitChoice, i_IsMainMenu ? "exit" : "go back");
                 Console.Write(">> ");
                     
                 string userInput = Console.ReadLine();

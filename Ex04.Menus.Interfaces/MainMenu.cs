@@ -49,7 +49,7 @@ namespace Ex04.Menus.Interfaces
                 string exitOrBack = i_IsMainMenu ? "Exit" : "Back";
                 Console.WriteLine("0. {0}", exitOrBack);
 
-                Console.WriteLine("Please enter your choice (1-{0} or 0 to {1}):", i_CurrentMenuItems.Count, i_IsMainMenu ? "exit" : "go back");
+                Console.WriteLine("Please enter your choice (1-{0} or {1} to {2}):", i_CurrentMenuItems.Count, k_ExitChoice, i_IsMainMenu ? "exit" : "go back");
                 Console.Write(">> ");
 
                 string userInput = Console.ReadLine();
