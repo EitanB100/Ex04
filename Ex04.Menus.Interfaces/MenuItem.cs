@@ -8,6 +8,11 @@ namespace Ex04.Menus.Interfaces
         private IMenuOptionsHandler m_Option;
         private List<MenuItem> m_SubMenu = new List<MenuItem>();
 
+        public MenuItem(string i_Name)
+        {
+            m_Name = i_Name;
+        }
+
         public MenuItem(string i_Name, IMenuOptionsHandler i_Option)
         {
             m_Name = i_Name;
@@ -36,11 +41,6 @@ namespace Ex04.Menus.Interfaces
             {
                 return m_SubMenu;
             }
-        }
-
-        public void AddSubMenuItem(MenuItem item)
-        {
-            m_SubMenu.Add(item);
         }
     }
 }
