@@ -5,33 +5,38 @@ namespace Ex04.Menus.Events
 {
     public class MainMenu
     {
-        private List<MenuItem> m_firstSubItems = new List<MenuItem>();
-        private string m_title;
+        private List<MenuItem> m_FirstSubItems = new List<MenuItem>();
+        private string m_Title;
         private const int k_ExitChoice = 0;
-        private const int k_bufferSizeForSeparator = 6;
+        private const int k_BufferSizeForSeparator = 6;
+
+        public MainMenu(string i_Title)
+        {
+            m_Title = i_Title;
+        }
 
         public String Title
         {
             get
             {
-                return m_title;
+                return m_Title;
             }
             set
             {
-                m_title = value;
+                m_Title = value;
             }
         }
         public List<MenuItem> SubItems
         {
             get
             {
-                return m_firstSubItems;
+                return m_FirstSubItems;
             }
         }
 
         public void AddMenuItem(MenuItem i_MenuItem)
         {
-            m_firstSubItems.Add(i_MenuItem);
+            m_FirstSubItems.Add(i_MenuItem);
         }
 
         public void Show()
@@ -49,7 +54,7 @@ namespace Ex04.Menus.Events
                 Console.WriteLine("** {0} **" , i_CurrentTitle);
                 Console.ResetColor();
 
-                string separator = new string('-', i_CurrentTitle.Length + k_bufferSizeForSeparator);
+                string separator = new string('-', i_CurrentTitle.Length + k_BufferSizeForSeparator);
 
                 Console.WriteLine(separator);
 
@@ -61,7 +66,7 @@ namespace Ex04.Menus.Events
                 }
 
                 string exitOrBack = i_IsMainMenu ? "Exit" : "Back";
-                Console.WriteLine("0. {0}", exitOrBack);
+                Console.WriteLine("{0}. {1}", k_ExitChoice, exitOrBack);
 
                 Console.WriteLine("Please enter your choice (1-{0} or 0 to {1}):", i_CurrentItems.Count, i_IsMainMenu ? "exit" : "go back");
                 Console.Write(">> ");
@@ -71,13 +76,14 @@ namespace Ex04.Menus.Events
 
                 while (!int.TryParse(userInput, out userChoice) || userChoice < 0 || userChoice > i_CurrentItems.Count)
                 {
-                    Console.WriteLine("Invalid input. Please enter a valid choice (1-{0} or 0 to exit):", i_CurrentItems.Count);
+                    Console.WriteLine("Invalid input. Please enter a valid choice (1-{0} or {1} to {2}):", i_CurrentItems.Count, k_ExitChoice, i_IsMainMenu ? "exit" : "go back");
                     Console.Write(">> ");
                     userInput = Console.ReadLine();
                 }
                 if (userChoice == 0)
                 {
                     askedToQuit = true;
+                    Console.Clear();
                 }
                 else
                 {

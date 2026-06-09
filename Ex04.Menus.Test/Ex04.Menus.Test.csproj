@@ -36,7 +36,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CountCapitals.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="ShowCurrentDate.cs" />
+    <Compile Include="ShowCurrentTime.cs" />
+    <Compile Include="ShowVersion.cs" />
+    <Compile Include="TestLogic.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ex04.Menus.Events\Ex04.Menus.Events.csproj">
+      <Project>{fd90bba5-c427-4c7b-bfb5-3946996e4ed4}</Project>
+      <Name>Ex04.Menus.Events</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ex04.Menus.Interfaces\Ex04.Menus.Interfaces.csproj">
+      <Project>{282da1e9-811d-4ed3-82ab-5c9854130f09}</Project>
+      <Name>Ex04.Menus.Interfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
