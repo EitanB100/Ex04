@@ -83,6 +83,7 @@ namespace Ex04.Menus.Events
                 if (userChoice == 0)
                 {
                     askedToQuit = true;
+                    Console.Clear();
                 }
                 else
                 {
