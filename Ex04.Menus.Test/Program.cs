@@ -15,9 +15,10 @@ namespace Ex04.Menus.Test
 
         private static void runEventsMenu()
         {
-            Ex04.Menus.Events.MainMenu eventsMenu = new Ex04.Menus.Events.MainMenu("Delegates Main Menu");
+            EventMainMenu eventsMenu = new EventMainMenu("Delegates Main Menu");
 
-            Ex04.Menus.Events.MenuItem showDateOrTime;
+            EventMenuItem showDateOrTime = new EventMenuItem("Show Current Date/Time");
+
         }
 
         private static void runInterfacesMenu()

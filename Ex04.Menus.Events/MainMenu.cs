@@ -3,14 +3,14 @@ using System.Collections.Generic;
 
 namespace Ex04.Menus.Events
 {
-    public class MainMenu
+    public class EventMainMenu
     {
-        private List<MenuItem> m_FirstSubItems = new List<MenuItem>();
+        private List<EventMenuItem> m_FirstSubItems = new List<EventMenuItem>();
         private string m_Title;
         private const int k_ExitChoice = 0;
         private const int k_BufferSizeForSeparator = 6;
 
-        public MainMenu(string i_Title)
+        public EventMainMenu(string i_Title)
         {
             m_Title = i_Title;
         }
@@ -26,7 +26,7 @@ namespace Ex04.Menus.Events
                 m_Title = value;
             }
         }
-        public List<MenuItem> SubItems
+        public List<EventMenuItem> SubItems
         {
             get
             {
@@ -34,7 +34,7 @@ namespace Ex04.Menus.Events
             }
         }
 
-        public void AddMenuItem(MenuItem i_MenuItem)
+        public void AddMenuItem(EventMenuItem i_MenuItem)
         {
             m_FirstSubItems.Add(i_MenuItem);
         }

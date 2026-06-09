@@ -3,13 +3,13 @@ using System.Collections.Generic;
 
 namespace Ex04.Menus.Events
 {
-    public class MenuItem
+    public class EventMenuItem
     {
         private string m_text;
-        private List<MenuItem> m_subItems = new List<MenuItem>();
+        private List<EventMenuItem> m_subItems = new List<MenuItem>();
         public event Action Clicked;
 
-        public MenuItem(string i_Text)
+        public EventMenuItem(string i_Text)
         {
             m_text = i_Text;
         }
@@ -26,7 +26,7 @@ namespace Ex04.Menus.Events
             }
         }
 
-        public List<MenuItem> SubItems
+        public List<EventMenuItem> SubItems
         {
             get
             {
@@ -34,12 +34,12 @@ namespace Ex04.Menus.Events
             }
         }
 
-        public void AddSubItem(MenuItem i_MenuItem)
+        public void AddSubItem(EventMenuItem i_MenuItem)
         {
             SubItems.Add(i_MenuItem);
         }
 
-        public void RemoveSubItem(MenuItem i_MenuItem)
+        public void RemoveSubItem(EventMenuItem i_MenuItem)
         {
             SubItems.Remove(i_MenuItem);
         }
